@@ -98,7 +98,9 @@ COPY (
       LEFT JOIN regions ON (le.region_id = regions.id)
       LEFT JOIN subjects ON (le.subject_id = subjects.id)
 
-    WHERE (tdata.created_at > '2018-09-01')
+    WHERE (tdata.created_at > '2018-12-01')
+
+    ORDER BY tdata.created_at DESC
   )
 
   -- SELECT count(*) FROM main_table;
@@ -137,4 +139,4 @@ COPY (
   -- ;
 
 )
-TO '/home/mtr/rep1.csv' WITH CSV HEADER DELIMITER ',';
+TO '/home/mtr/task_reports/rep1_month_12.csv' WITH CSV HEADER DELIMITER ',';
